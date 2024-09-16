@@ -24,11 +24,11 @@ btn.addEventListener("click", function(){
  
  });
 
- removeall.addEventListener('click' , () => {
-    //   fetch(url, {
-    //     method: 'DELETE',
-    //   });
- })
+//  removeall.addEventListener('click' , () => {
+//       fetch(url, {
+//         method: 'DELETE',
+//       });
+//  })
 
 
  fetch(url)
