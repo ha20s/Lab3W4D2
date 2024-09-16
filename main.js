@@ -11,6 +11,7 @@ btn.addEventListener("click", function(){
     fetch(url, {
         method: 'POST',
         body: JSON.stringify({
+        
         name : input.value,
         image : btnimg.value
 
@@ -24,11 +25,14 @@ btn.addEventListener("click", function(){
  
  });
 
-//  removeall.addEventListener('click' , () => {
-//       fetch(url, {
-//         method: 'DELETE',
-//       });
-//  })
+
+
+
+  removeall.addEventListener('click' , () => {
+      fetch(url+`/${id}`, {
+        method: 'DELETE',
+      });
+  })
 
 
  fetch(url)
@@ -43,27 +47,17 @@ btn.addEventListener("click", function(){
 
 
         remove.addEventListener('click', () => {
-            // fetch('url'+ `${\item.id}`, {
-            //     method: 'DELETE',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // })
-            // .then(response => {
-            //     if (response.ok) {
-            //         console.log('Resource deleted successfully');
-            //     } else {
-            //         console.error('Failed to delete resource');
-            //     }
-            // })
-            // .catch(error => console.error('Error:', error));
+            fetch(url+`/${item.id}`, {
+                method: 'DELETE',
+              });
 
-  
-            console.log('New button clicked!'); 
+            // console.log('New button clicked!'); 
           });
 
         
         remove.textContent = "Delete"
+
+        
         title.textContent = item.name,
         img.src = item.image
 
@@ -86,6 +80,19 @@ btn.addEventListener("click", function(){
  })
 
  
+ //  if (title.textContent = "" ){
+//     alert("enter Something")
+
+// } else {
+//     title.textContent = item.name
+// }
+// if (img.src = "" ){
+//     alert("enter Something")
+
+// } else {
+//     img.src = item.image 
+// }
+
 
 //  .then(Data =>
 //     data.map(item=> {
